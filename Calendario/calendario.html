@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário - Gestão Escolar Malanje</title>
+    <link rel="stylesheet" href="/Calendario/calendario-script.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo Gestão Escolar Malanje">
+                <span>Gestão Escolar Malanje</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="escolas.html"><i class="fas fa-school"></i> Escolas</a></li>
+                    <li><a href="alunos.html"><i class="fas fa-users"></i> Alunos</a></li>
+                    <li><a href="professores.html"><i class="fas fa-chalkboard-teacher"></i> Professores</a></li>
+                    <li><a href="calendario.html" class="active"><i class="fas fa-calendar-alt"></i> Calendário</a></li>
+                    <li><a href="index.html" class="logout"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h1>
+            Calendário Escolar
+            <button class="add-event-btn">
+                <i class="fas fa-plus"></i> Adicionar Evento
+            </button>
+        </h1>
+
+        <div class="calendar-header">
+            <div class="calendar-title">Mês Atual</div>
+            <div class="calendar-nav">
+                <button><i class="fas fa-chevron-left"></i></button>
+                <button><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <div class="calendar">
+            <div class="calendar-weekdays">
+                <div>Dom</div>
+                <div>Seg</div>
+                <div>Ter</div>
+                <div>Qua</div>
+                <div>Qui</div>
+                <div>Sex</div>
+                <div>Sáb</div>
+            </div>
+            <div class="calendar-days">
+                <!-- Dias serão gerados pelo JavaScript -->
+            </div>
+        </div>
+
+        <div class="event-list">
+            <h2>Próximos Eventos</h2>
+            <table>
+                <tbody>
+                    <!-- Eventos serão gerados pelo JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Modal para Adicionar/Editar Evento -->
+    <div class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Adicionar Evento</h2>
+                <button class="close-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <form class="modal-form">
+                <input type="text" name="title" placeholder="Título do Evento*" required>
+                <input type="date" name="date" required>
+                <input type="time" name="time" placeholder="Hora (opcional)">
+                <textarea name="description" placeholder="Descrição (opcional)"></textarea>
+            </form>
+            <div class="modal-footer">
+                <button class="cancel-btn">Cancelar</button>
+                <button class="save-btn">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Gestão Escolar Malanje - 2025 | <a href="sobre.html">Sobre</a></p>
+    </footer>
+    <script src="/Calendario/calendario-script.js"></script>
+</body>
+</html>
