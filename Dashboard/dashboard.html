@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Gestão Escolar Malanje</title>
+    <link rel="stylesheet" href="/Dashboard/dashboard-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo Gestão Escolar Malanje">
+            <span>Gestão Escolar Malanje</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="escolas.html"><i class="fas fa-school"></i> Escolas</a></li>
+                <li><a href="turmas.html"><i class="fas fa-chalkboard-teacher"></i> Turmas</a></li>
+                <li><a href="calendario.html"><i class="fas fa-calendar-alt"></i> Calendário</a></li>
+                <li><a href="index.html" class="logout"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Bem-vindo, <span id="userName">[Nome do Utilizador]</span>!</h1>
+        <div class="dashboard-cards">
+            <a href="escolas.html" class="card">
+                <i class="fas fa-school"></i>
+                <h3>Escolas</h3>
+                <p>Gerir escolas registadas</p>
+            </a>
+            <a href="turmas.html" class="card">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>Turmas</h3>
+                <p>Gerir turmas e horários</p>
+            </a>
+            <a href="alunos.html" class="card">
+                <i class="fas fa-users"></i>
+                <h3>Alunos</h3>
+                <p>Gerir alunos e matrículas</p>
+            </a>
+            <a href="professores.html" class="card">
+                <i class="fas fa-user-tie"></i>
+                <h3>Professores</h3>
+                <p>Gerir corpo docente</p>
+            </a>
+            <a href="relatorios.html" class="card">
+                <i class="fas fa-chart-bar"></i>
+                <h3>Relatórios</h3>
+                <p>Visualizar estatísticas</p>
+            </a>
+            <a href="configuracoes.html" class="card">
+                <i class="fas fa-cog"></i>
+                <h3>Configurações</h3>
+                <p>Ajustes da plataforma</p>
+            </a>
+        </div>
+    </main>
+    <footer>
+        <p>Gestão Escolar Malanje - 2025 | <a href="sobre.html" style="color: inherit;">Sobre</a></p>
+    </footer>
+    <script src="/script.js"></script>
+</body>
+</html>
