@@ -185,16 +185,16 @@ main h1 {
 }
 
 .calendar-day {
-    padding: 1rem;
     min-height: 120px;
     border: 1px solid #eee;
+    padding: 0.5rem;
     position: relative;
 }
 
 .calendar-day-header {
     font-weight: 600;
-    margin-bottom: 0.5rem;
     text-align: right;
+    margin-bottom: 0.5rem;
 }
 
 .calendar-day:not(.empty) {
@@ -474,6 +474,7 @@ footer a:hover {
     .calendar-weekdays div,
     .calendar-day {
         padding: 0.5rem;
+        font-size: 0.8rem;
     }
 
     .calendar-event {
