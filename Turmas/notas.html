@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas - Gestão Escolar Malanje</title>
+    <link rel="stylesheet" href="/Turmas/turma-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo Gestão Escolar Malanje">
+                <span>Gestão Escolar Malanje</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="turma.html" class="active"><i class="fas fa-users-class"></i> Minha Turma</a></li>
+                    <li><a href="index.html" class="logout"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h1>Notas de <span class="student-name">Aluno</span></h1>
+        <p class="class-info-header">Turma: <span class="class-name">10A</span></p>
+
+        <div class="student-nav">
+            <a href="turma.html">Informações da Turma</a>
+            <a href="notas.html" class="active">Minhas Notas</a>
+            <a href="horario.html">Meu Horário</a>
+            <a href="disciplinas.html">Minhas Disciplinas</a>
+        </div>
+
+        <div class="period-selector">
+            <button class="active" data-period="1T">1º Trimestre</button>
+            <button data-period="2T">2º Trimestre</button>
+            <button data-period="3T">3º Trimestre</button>
+        </div>
+
+        <table class="notas-table">
+            <thead>
+                <tr>
+                    <th>Disciplina</th>
+                    <th>Notas</th>
+                    <th>Média</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Notas serão carregadas pelo JavaScript -->
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>Gestão Escolar Malanje - 2025 | <a href="sobre.html">Sobre</a></p>
+    </footer>
+    <script src="/Turmas/turma-script.js"></script>
+</body>
+</html>
