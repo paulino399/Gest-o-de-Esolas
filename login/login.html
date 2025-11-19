@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Gestão Escolar Malanje</title>
+    <link rel="stylesheet" href="/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Acesso à Plataforma</h2>
+        <form id="loginForm">
+            <input type="text" placeholder="Utilizador" required>
+            <input type="password" placeholder="Senha" required>
+            <select required>
+                <option value="">Tipo de Utilizador</option>
+                <option value="admin">Administrador</option>
+                <option value="professor">Professor</option>
+                <option value="aluno">Aluno</option>
+            </select>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+    <script src="/login-script.js"></script>
+</body>
+</html>
