@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão Centralizada - Gestão Escolar Malanje</title>
+    <link rel="stylesheet" href="/gestao-centralizada/gestao-centralizada-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo Gestão Escolar Malanje">
+                <span>Gestão Escolar Malanje</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="escolas.html"><i class="fas fa-school"></i> Escolas</a></li>
+                    <li><a href="alunos.html"><i class="fas fa-users"></i> Alunos</a></li>
+                    <li><a href="professores.html"><i class="fas fa-chalkboard-teacher"></i> Professores</a></li>
+                    <li><a href="turmas.html"><i class="fas fa-users-class"></i> Turmas</a></li>
+                    <li><a href="calendario.html"><i class="fas fa-calendar-alt"></i> Calendário</a></li>
+                    <li><a href="gestao-centralizada.html" class="active"><i class="fas fa-user-shield"></i> Gestão Centralizada</a></li>
+                    <li><a href="index.html" class="logout"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h1>Gestão Centralizada de Utilizadores</h1>
+
+        <div class="user-type-tabs">
+            <button class="user-type-tab active" data-type="aluno">Alunos</button>
+            <button class="user-type-tab" data-type="professor">Professores</button>
+        </div>
+
+        <button class="add-user-btn">
+            <i class="fas fa-plus"></i> Adicionar Utilizador
+        </button>
+
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" placeholder="Pesquisar utilizadores...">
+                <button type="button"><i class="fas fa-search"></i></button>
+            </div>
+            <select class="filter-select">
+                <option value="">Todos</option>
+                <option value="Ciências">Ciências</option>
+                <option value="Humanidades">Humanidades</option>
+                <option value="Artes">Artes</option>
+                <option value="Tecnologia">Tecnologia</option>
+                <option value="Matemática">Matemática</option>
+                <option value="Português">Português</option>
+            </select>
+        </div>
+
+        <table class="users-table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Número</th>
+                    <th>Turma/Departamento</th>
+                    <th>Contacto</th>
+                    <th>Email</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Conteúdo gerado pelo JavaScript -->
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Modal para Adicionar/Editar Utilizador -->
+    <div class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Adicionar Aluno</h2>
+                <button class="close-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <form class="modal-form">
+                <div class="modal-tabs">
+                    <button class="modal-tab active" data-target="info-basica">Informações Básicas</button>
+                    <button class="modal-tab" data-target="info-academica">Informações Académicas</button>
+                    <button class="modal-tab" data-target="notas" id="notas-tab">Notas</button>
+                    <button class="modal-tab" data-target="horarios">Horários</button>
+                </div>
+
+                <div id="info-basica" class="tab-content active">
+                    <input type="text" name="nome" placeholder="Nome Completo*" required>
+                    <input type="text" name="numero" placeholder="Número de Identificação*" required>
+                    <input type="text" name="contacto" placeholder="Contacto*" required>
+                    <input type="email" name="email" placeholder="Email">
+                </div>
+
+                <div id="info-academica" class="tab-content aluno-fields">
+                    <select name="turma">
+                        <option value="">Turma*</option>
+                        <option value="7A">7A</option>
+                        <option value="8B">8B</option>
+                        <option value="9C">9C</option>
+                        <option value="10A">10A</option>
+                        <option value="11B">11B</option>
+                        <option value="12C">12C</option>
+                    </select>
+                    <select name="curso">
+                        <option value="">Curso*</option>
+                        <option value="Ciências">Ciências</option>
+                        <option value="Humanidades">Humanidades</option>
+                        <option value="Artes">Artes</option>
+                        <option value="Tecnologia">Tecnologia</option>
+                    </select>
+                </div>
+
+                <div id="info-academica" class="tab-content professor-fields" style="display: none;">
+                    <select name="departamento">
+                        <option value="">Departamento*</option>
+                        <option value="Matemática">Matemática</option>
+                        <option value="Português">Português</option>
+                        <option value="Ciências">Ciências</option>
+                        <option value="História">História</option>
+                        <option value="Geografia">Geografia</option>
+                    </select>
+                    <input type="text" name="turmas" placeholder="Turmas (separadas por vírgula)*">
+                    <input type="text" name="disciplinas" placeholder="Disciplinas (separadas por vírgula)*">
+                </div>
+
+                <div id="notas" class="tab-content">
+                    <button type="button" class="add-nota-btn">
+                        <i class="fas fa-plus"></i> Adicionar Nota
+                    </button>
+                    <table class="notas-table">
+                        <thead>
+                            <tr>
+                                <th>Disciplina</th>
+                                <th>Notas</th>
+                                <th>Média</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Notas serão carregadas pelo JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="horarios" class="tab-content">
+                    <p>Gestão de horários (em desenvolvimento)</p>
+                </div>
+            </form>
+            <div class="modal-footer">
+                <button class="cancel-btn">Cancelar</button>
+                <button class="save-btn">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Gestão Escolar Malanje - 2025 | <a href="sobre.html">Sobre</a></p>
+    </footer>
+    <script src="/gestao-centralizada/gestao-centralizada-script.js"></script>
+</body>
+</html>
