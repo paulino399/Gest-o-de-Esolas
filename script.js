@@ -1,19 +1,14 @@
-// Simulação de login
-document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const userType = this.querySelector('select').value;
-    if (userType === 'aluno') {
-        window.location.href = 'aluno.html';
-    } else if (userType === 'professor') {
-        window.location.href = 'professor.html';
-    } else if (userType === 'admin') {
-        window.location.href = 'dashboard.html';
-    }
+// Feedback Widget
+document.querySelector('.feedback-widget').addEventListener('click', function() {
+    alert('Obrigado pelo seu feedback!');
 });
 
-// Logout
-document.querySelector('.logout')?.addEventListener('click', function(e) {
+// Search Functionality
+document.querySelector('.search-box button').addEventListener('click', function(e) {
     e.preventDefault();
-    alert('Sessão terminada!');
-    window.location.href = 'index.html';
+    const searchTerm = document.querySelector('.search-box input').value;
+    if (searchTerm.trim()) {
+        alert('A pesquisar por: ' + searchTerm);
+        // Aqui podes implementar a lógica de pesquisa real
+    }
 });
