@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i < startingDay; i++) {
             const day = document.createElement('div');
             day.className = 'calendar-day empty other-month';
-            day.textContent = prevMonthLastDay - startingDay + i + 1;
+            day.innerHTML = `<div class="calendar-day-header">${prevMonthLastDay - startingDay + i + 1}</div>`;
             calendarDays.appendChild(day);
         }
 
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 1; i <= daysToAdd; i++) {
             const day = document.createElement('div');
             day.className = 'calendar-day empty other-month';
-            day.textContent = i;
+            day.innerHTML = `<div class="calendar-day-header">${i}</div>`;
             calendarDays.appendChild(day);
         }
     }
@@ -148,11 +148,13 @@ document.addEventListener('DOMContentLoaded', function() {
      * @param {Array} events - Lista de eventos
      */
     function renderEventList(events) {
+        if (!eventList) return;
+
         eventList.innerHTML = '';
 
         if (events.length === 0) {
             const row = document.createElement('tr');
-            row.innerHTML = '<td colspan="4" style="text-align: center; padding: 1rem;">Nenhum evento encontrado</td>';
+            row.innerHTML = '<td colspan="3" style="text-align: center; padding: 1rem;">Nenhum evento encontrado</td>';
             eventList.appendChild(row);
             return;
         }
