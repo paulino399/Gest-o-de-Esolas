@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alunos - Gestão Escolar Malanje</title>
+    <link rel="stylesheet" href="/Aluno/alunos-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo Gestão Escolar Malanje">
+                <span>Gestão Escolar Malanje</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/Dashboard/dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="escolas.html"><i class="fas fa-school"></i> Escolas</a></li>
+                    <li><a href="alunos.html" class="active"><i class="fas fa-users"></i> Alunos</a></li>
+                    <li><a href="turmas.html"><i class="fas fa-chalkboard-teacher"></i> Turmas</a></li>
+                    <li><a href="calendario.html"><i class="fas fa-calendar-alt"></i> Calendário</a></li>
+                    <li><a href="index.html" class="logout"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h1>
+            Gerir Alunos
+            <button class="add-student-btn">
+                <i class="fas fa-plus"></i> Adicionar Aluno
+            </button>
+        </h1>
+
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" placeholder="Pesquisar alunos...">
+                <button type="button"><i class="fas fa-search"></i></button>
+            </div>
+            <select class="filter-select">
+                <option value="">Todos os Cursos</option>
+                <option value="Ciências">Ciências</option>
+                <option value="Humanidades">Humanidades</option>
+                <option value="Artes">Artes</option>
+                <option value="Tecnologia">Tecnologia</option>
+            </select>
+        </div>
+
+        <table class="students-table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Nº Aluno</th>
+                    <th>Turma</th>
+                    <th>Curso</th>
+                    <th>Contacto</th>
+                    <th>Email</th>
+                    <th>Ações</th>
+                    <th>Nota</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Conteúdo gerado pelo JavaScript -->
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Modal para Adicionar/Editar Aluno -->
+    <div class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Adicionar Aluno</h2>
+                <button class="close-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <form class="modal-form">
+                <input type="text" name="nome" placeholder="Nome Completo*" required>
+                <input type="text" name="numero" placeholder="Número de Aluno*" required>
+                <input type="text" name="turma" placeholder="Turma*" required>
+                <select name="curso" required>
+                    <option value="">Curso*</option>
+                    <option value="Ciências">Ciências</option>
+                    <option value="Humanidades">Humanidades</option>
+                    <option value="Artes">Artes</option>
+                    <option value="Tecnologia">Tecnologia</option>
+                </select>
+                <input type="text" name="contacto" placeholder="Contacto">
+                <input type="email" name="email" placeholder="Email">
+            </form>
+            <div class="modal-footer">
+                <button class="cancel-btn">Cancelar</button>
+                <button class="save-btn">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Gestão Escolar Malanje - 2025 | <a href="sobre.html">Sobre</a></p>
+    </footer>
+    <script src="/Aluno/alunos-script.js"></script>
+</body>
+</html>
