@@ -227,3 +227,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     }
 });
+
+// Nas páginas dos alunos/professores, adicionar este código:
+window.addEventListener('storage', function() {
+    const updatedData = localStorage.getItem('dadosCentralizados');
+    if (updatedData) {
+        const dados = JSON.parse(updatedData);
+
+        // Atualizar os dados da página com base no ID do utilizador atual
+        // Exemplo para página de aluno:
+        const alunoId = parseInt(window.location.search.split('=')[1]); // Supondo que o ID vem na URL: aluno.html?id=1
+        const alunoAtualizado = dados.alunos.find(a => a.id === alunoId);
+
+        if (alunoAtualizado) {
+            // Atualizar a página com os novos dados
+            document.querySelector('.student-name').textContent = alunoAtualizado.nome;
+            // Atualizar notas, horários, etc.
+            renderNotas(alunoAtualizado.notas);
+            renderHorario(alunoAtualizado.horarios);
+
+            // Mostrar mensagem de atualização
+            showMessage('Os seus dados foram atualizados!', 'success');
+        }
+    }
+});
