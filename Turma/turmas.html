@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turmas - Gestão Escolar Malanje</title>
+    <link rel="stylesheet" href="/Turma/turmas-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo Gestão Escolar Malanje">
+                <span>Gestão Escolar Malanje</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="escolas.html"><i class="fas fa-school"></i> Escolas</a></li>
+                    <li><a href="alunos.html"><i class="fas fa-users"></i> Alunos</a></li>
+                    <li><a href="professores.html"><i class="fas fa-chalkboard-teacher"></i> Professores</a></li>
+                    <li><a href="turmas.html" class="active"><i class="fas fa-users-class"></i> Turmas</a></li>
+                    <li><a href="calendario.html"><i class="fas fa-calendar-alt"></i> Calendário</a></li>
+                    <li><a href="index.html" class="logout"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h1>
+            Gerir Turmas
+            <button class="add-class-btn">
+                <i class="fas fa-plus"></i> Adicionar Turma
+            </button>
+        </h1>
+
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" placeholder="Pesquisar turmas...">
+                <button type="button"><i class="fas fa-search"></i></button>
+            </div>
+            <select class="filter-select">
+                <option value="">Todos os Cursos</option>
+                <option value="Ciências">Ciências</option>
+                <option value="Humanidades">Humanidades</option>
+                <option value="Artes">Artes</option>
+                <option value="Tecnologia">Tecnologia</option>
+            </select>
+        </div>
+
+        <table class="classes-table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Curso</th>
+                    <th>Ano</th>
+                    <th>Professor</th>
+                    <th>Alunos</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Conteúdo gerado pelo JavaScript -->
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Modal para Adicionar/Editar Turma -->
+    <div class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Adicionar Turma</h2>
+                <button class="close-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <form class="modal-form">
+                <input type="text" name="nome" placeholder="Nome da Turma*" required>
+                <select name="curso" required>
+                    <option value="">Curso*</option>
+                    <option value="Ciências">Ciências</option>
+                    <option value="Humanidades">Humanidades</option>
+                    <option value="Artes">Artes</option>
+                    <option value="Tecnologia">Tecnologia</option>
+                </select>
+                <select name="ano" required>
+                    <option value="">Ano Letivo*</option>
+                    <option value="7º">7º</option>
+                    <option value="8º">8º</option>
+                    <option value="9º">9º</option>
+                    <option value="10º">10º</option>
+                    <option value="11º">11º</option>
+                    <option value="12º">12º</option>
+                </select>
+                <input type="text" name="professor" placeholder="Professor Responsável*" required>
+                <input type="number" name="alunos" placeholder="Número de Alunos" min="0">
+            </form>
+            <div class="modal-footer">
+                <button class="cancel-btn">Cancelar</button>
+                <button class="save-btn">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Gestão Escolar Malanje - 2025 | <a href="sobre.html">Sobre</a></p>
+    </footer>
+    <script src="/Turma/turmas-script.js"></script>
+</body>
+</html>
