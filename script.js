@@ -12,3 +12,23 @@ document.querySelector('.search-box button').addEventListener('click', function(
         // Aqui podes implementar a lógica de pesquisa real
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.news-slider');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    prevBtn.addEventListener('click', function() {
+        slider.scrollBy({
+            left: -320,
+            behavior: 'smooth'
+        });
+    });
+
+    nextBtn.addEventListener('click', function() {
+        slider.scrollBy({
+            left: 320,
+            behavior: 'smooth'
+        });
+    });
+});
